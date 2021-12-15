@@ -11,6 +11,7 @@
 //   4. The input section allows for actual content. 
 //      4.1. The icon can be clicked. 
 //      4.2. The click will automatically push the content to local storage for future use. 
+//   5. refreshing will pull from local storage 
 
 // set date and time 
 $("#currentDay").text( moment().format('MMMM Do YYYY, h:mm a') );
@@ -47,9 +48,20 @@ $(".saveBtn").on("click", function() {
     var input = $(this).parent().children(".col-md-10").val();
     var timeRow = $(this).parent().attr("id");
     // console.log(timeRow, input)
-    ocalStorage.setItem(timeRow, input);
+    localStorage.setItem(timeRow, input);
 })
 
 // pull from local storage upon starting up
+$("#hour-9 .col-md-10").val(localStorage.getItem("hour-9"));
+$("#hour-10 .col-md-10").val(localStorage.getItem("hour-10"));
+$("#hour-11 .col-md-10").val(localStorage.getItem("hour-11"));
+$("#hour-12 .col-md-10").val(localStorage.getItem("hour-12"));
+$("#hour-13 .col-md-10").val(localStorage.getItem("hour-13"));
+$("#hour-14 .col-md-10").val(localStorage.getItem("hour-14"));
+$("#hour-15 .col-md-10").val(localStorage.getItem("hour-15"));
+$("#hour-16 .col-md-10").val(localStorage.getItem("hour-16"));
+$("#hour-17 .col-md-10").val(localStorage.getItem("hour-17"));
+$("#hour-18 .col-md-10").val(localStorage.getItem("hour-18"));
+
 
 timer ();
