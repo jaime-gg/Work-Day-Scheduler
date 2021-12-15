@@ -42,4 +42,14 @@ function timer() {
     })
 }
 
+// save via clicking icon
+$(".saveBtn").on("click", function() {
+    var input = $(this).parent().children(".col-md-10").val();
+    var timeRow = $(this).parent().attr("id");
+    // console.log(timeRow, input)
+    ocalStorage.setItem(timeRow, input);
+})
+
+// pull from local storage upon starting up
+
 timer ();
