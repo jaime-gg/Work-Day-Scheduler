@@ -37,6 +37,8 @@ The following animation demonstrates the application functionality:
 ## Review
 This application was developed with a combination of HTML, CSS, and Javascript, with focus placed on third party API's such as jQuery. 
 
+The "Save" Icon was provided by fontawesome.com
+
 I was also required to submit the following for review:
 
 * The URL of the deployed application.
