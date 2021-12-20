@@ -8,10 +8,10 @@
 //   3. Set the input background color to change depending on the hour of the day. -- done
 //          3.1. create function
 //              3.1.1. set it so that depending on time of day, add/remove classes linked to css colors 
-//   4. The input section allows for actual content. 
-//      4.1. The icon can be clicked. 
-//      4.2. The click will automatically push the content to local storage for future use. 
-//   5. refreshing will pull from local storage 
+//   4. The input section allows for actual content. -- done
+//      4.1. The icon can be clicked. --done
+//      4.2. The click will automatically push the content to local storage for future use. --done
+//   5. refreshing will pull from local storage -- done
 
 // set date and time 
 $("#currentDay").text( moment().format('MMMM Do YYYY, h:mm a') );
@@ -25,6 +25,8 @@ function timer() {
     $(".time-block").each(function() {
         var timeBlock = parseInt($(this).attr("id").split("hour-")[1]);
 
+        // add and remove classes depending on time of day, these change the colors of the background
+        // classes given in the provided css 
         if (timeBlock < currentTime) {
             $(this).addClass("past");
             $(this).removeClass("present");
@@ -43,7 +45,7 @@ function timer() {
     })
 }
 
-// save via clicking icon
+// save data to local storage by clicking the 'save' icon
 $(".saveBtn").on("click", function() {
     var input = $(this).parent().children(".col-md-10").val();
     var timeRow = $(this).parent().attr("id");
@@ -51,7 +53,7 @@ $(".saveBtn").on("click", function() {
     localStorage.setItem(timeRow, input);
 })
 
-// pull from local storage upon starting up
+// pull from local storage when loading the page. 
 $("#hour-9 .col-md-10").val(localStorage.getItem("hour-9"));
 $("#hour-10 .col-md-10").val(localStorage.getItem("hour-10"));
 $("#hour-11 .col-md-10").val(localStorage.getItem("hour-11"));
